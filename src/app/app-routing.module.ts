@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () =>  import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./layouts/backoffice-layouts/backoffice-layouts.module').then(m => m.BackofficeLayoutsModule),
+    // canActivate: [AuthGuard]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,32 @@
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme h-100">
+    <!-- ! Hide app brand if navbar-full -->
+    <div class="app-brand demo">
+        <a routerLink="/dashboard" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <img src="assets/image/logo.png" style="margin-left:15px" width="35%" alt="">
+            </span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">SkinCare</span>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+    <ul class="menu-inner py-1 sidebar">
+        <li class="menu-item" *ngFor="let navigation of navigation.navigation" [routerLinkActive]="'active'" [id]="'menu-'+navigation.id">
+            <a *ngIf="navigation.type === 'item'" [routerLink]="navigation.url" class="menu-link">
+                <i class="menu-icon tf-icons" [ngClass]="navigation.icon"></i>
+                <div>{{navigation.title}}</div>
+            </a>
+            <a *ngIf="navigation.type === 'group'"  class="menu-link menu-toggle pointer" (click)="dropDownCLick($event)" [id]="navigation.id">
+                <i class="menu-icon tf-icons" [ngClass]="navigation.icon" ></i>
+                {{navigation.title}}
+            </a>
+            <ul class="menu-sub" *ngIf="navigation.type === 'group'" >
+                <li *ngFor="let children of navigation.children" class="menu-item" [routerLinkActive]="'active'">
+                    <a [routerLink]="navigation.url + children.url" class="menu-link">
+                        <div>{{children.title}}</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</aside>
