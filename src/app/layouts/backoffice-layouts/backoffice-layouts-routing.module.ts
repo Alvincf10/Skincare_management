@@ -13,6 +13,10 @@ const routes: Routes = [
         component:dashboardComponent
       },
       {
+        path:'product',
+        loadChildren: () => import('../../pages/product/product.module').then(m =>m.ProductModule)
+      },
+      {
         path:'master-data',
         loadChildren: () => import('../../pages/master-data/master-data.module').then(m =>m.MasterDataModule)
       }
