@@ -16,13 +16,14 @@
             <!-- /Logo -->
             <form id="formAuthentication" class="mb-3 mt-4">
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="username" class="form-label">username</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="email"
-                  placeholder="Enter your email"
-                  name="email"
+                  id="username"
+                  placeholder="Enter your username"
+                  [(ngModel)]="username"
+                  name="username"
                   autofocus
                 />
               </div>
@@ -36,6 +37,7 @@
                     id="password"
                     name="password"
                     class="form-control"
+                    [(ngModel)]="password"
                     placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                     aria-describedby="password"
                   />
@@ -44,7 +46,7 @@
               <div class="mb-3">
               </div>
               <div class="mb-3">
-                <a (click)="onSubmit()" class="btn btn-primary d-grid w-100 color-white" type="submit">Login</a>
+                <a class="btn btn-primary d-grid w-100 color-white" type="submit" (click)="onsubmit()">Login</a>
               </div>
             </form>
           </div>
