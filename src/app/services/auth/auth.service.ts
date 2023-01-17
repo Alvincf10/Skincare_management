@@ -33,7 +33,7 @@ export class AuthService {
       map((response: any) => {
         return response;
       }),
-      catchError((e: Response) => this.handleError(e)),
+      catchError((e: Response) => this.handleError(e))
     );
   }
 
