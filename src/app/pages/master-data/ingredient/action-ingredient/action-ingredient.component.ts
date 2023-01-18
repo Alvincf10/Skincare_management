@@ -11,7 +11,7 @@ import { IngredientModel } from 'src/app/@core/model/ingredient.model';
   styleUrls: ['./action-ingredient.component.scss']
 })
 export class ActionIngredientComponent implements OnInit {
-  ingredientData = new IngredientModel
+  ingredientData = new IngredientModel()
 
   constructor(
     public dialogRef: MatDialogRef<ActionIngredientComponent>,
@@ -44,8 +44,9 @@ export class ActionIngredientComponent implements OnInit {
       return;
     }
     const param: any = {
-    ingridientName: this.ingredientData.ingridientName
-    };
+      id: this.ingredientData.id,
+      ingridientName: this.ingredientData.ingridientName
+    };  
     if (this.ingredientData.id){
       param.id = this.ingredientData.id;
       this.ingredientService.Update(param).subscribe(

@@ -1,4 +1,4 @@
 export class IngredientModel {
-    id: number = 1;
+    id?: number;
     ingridientName!: string;
 }

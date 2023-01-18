@@ -1,4 +1,4 @@
 export class StockModel {
-    idStock!: number;
+    idStock?: number;
     quantityStock!: number;
 }
