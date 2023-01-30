@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 const API_ENDPOINT_LOCAL = 'http://localhost:7887/api/';
+const API_ENDPOINT_PROD = 'http://103.161.184.147:7887/api/';
 
 export const environment = {
   production: false,

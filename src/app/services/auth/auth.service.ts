@@ -26,7 +26,7 @@ export class AuthService {
     const url = environment.APIURL + path;
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '103.161.184.147:7887'
     });
     return this.http.post(url, param, {headers})
     .pipe(
